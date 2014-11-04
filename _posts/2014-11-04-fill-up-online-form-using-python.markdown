@@ -44,3 +44,12 @@ br["user[email]"] = email  #email for github
 br["user[password]"] = password  #password for github
 sign_up = br.submit()
 {% endhighlight %}
+
+**Possibilities**
+-----------------
+1. ***To automate sign-up*** (Tip : Use a .txt file to store the username,email. Hardcode password in the program. Use a loop to sign-up for all in .txt file)
+2. ***Bruteforce attack***
+3. ***Fetch google search results***
+
+**Limitations**
+1. ***Exception handling is not considered*** (This may result in 503 error code(service unavailable) while making numerous requests to a website. Tip:looping over different user agents may help)
