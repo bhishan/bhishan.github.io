@@ -52,4 +52,5 @@ sign_up = br.submit()
 3. ***Fetch google search results***
 
 **Limitations**
+---------------
 1. ***Exception handling is not considered*** (This may result in 503 error code(service unavailable) while making numerous requests to a website. Tip:looping over different user agents may help)
