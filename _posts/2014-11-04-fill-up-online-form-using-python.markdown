@@ -29,9 +29,19 @@ In case of github ::
 
 The above code is the result of inspect element over the **username** text entry area. All we want is the value assigned to the name attribute. In this case it is **"user[login]"**.
 
-Similarly for 
+Similarly for the **email address** text field, the value of the name attribute is **"user[email]"**.
+And for the **password** entry field, the value of the name attribute is **"user[password]"**.
+
+Thats all the information we need. The below code should sign up for a git account. 
 {% highlight python %}
-def print_hi(name)
-  print name
-print_hi('Tom')
+import mechanize  #sudo pip install python-mechanize
+br = mechanize.Browser()  #initiating a browser
+br.set_handle_robots(False)  #ignore robots.txt
+br.addheaders = [("User-agent","Mozilla/5.0")]  #our identity 
+gitbot = br.open("https://github.com")  #requesting the github base url
+br.select_form(nr=2)  #the sign up form in github is in third position(search and sign in forms come before signup)
+br["user[login]"] = username  #username for github
+br["user[email]"] = email  #email for github
+br["user[password]"] = password  #password for github
+sign_up = br.submit()
 {% endhighlight %}
