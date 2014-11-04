@@ -24,7 +24,7 @@ On each text entry box, right click and inspect elements and look for the value 
 In case of github ::
 --------------------
 1. For username field
-{% highlight html %}
+{% highlight python %}
 **"<input type="text" name="user[login]" class="textfield" placeholder="Pick a username" data-autocheck-url="/signup_check/username" autofocus="">"**
 {% endhighlight %}
 The above code is the result of inspect element over the **username** text entry area. All we want is the value assigned to the name attribute. In this case it is **"user[login]"**.
